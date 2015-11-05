@@ -1,5 +1,5 @@
 - name: Check for Codedeploy
-  command: ps aux |grep -i codedeploy
+  shell: ps aux |grep -i codedeploy |grep -v grep
   register: response
 
 - name: Print response of grep
