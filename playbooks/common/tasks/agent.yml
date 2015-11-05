@@ -1,7 +1,7 @@
-- name: Check hostname
-  command: hostname
-  register: hostName
+- name: Check for Codedeploy
+  command: ps aux |grep -i codedeploy
+  register: response
 
-- name: Print hostname
+- name: Print response of grep
   debug:
-    msg: "Hostname: {{ hostName.stdout }}"
+    msg: "Response: {{ response.stdout }}"
