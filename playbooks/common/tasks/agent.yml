@@ -1,0 +1,7 @@
+- name: Check hostname
+  command: hostname
+  register: hostName
+
+- name: Print hostname
+  debug:
+    msg: "Hostname: {{ hostName.stdout }}"
