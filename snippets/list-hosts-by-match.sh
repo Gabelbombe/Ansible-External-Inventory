@@ -1,6 +1,5 @@
 #!/bin/bash
-ansible "tag_Function_[cms|ngc]*:&tag_Environment_[d|D]emo" --list-hosts
-
+ansible 'tag_Function_cms*:tag_Function_ngc*:!tag_Function_*engine*:&tag_Environment_[dD]emo' --list-hosts
 #  $ ansible-playbook playbooks/agentrun.yml -l "tag_Function_[cms|ngc]*:&tag_Environment_[d|D]emo" -u ${LDAP} --list-hosts
 #
 #  playbook: playbooks/agentrun.yml
